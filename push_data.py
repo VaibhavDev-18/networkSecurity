@@ -8,7 +8,6 @@ from networksecurity.logging.logger import logging
 load_dotenv()
 uri = os.getenv("MONGODB_URL")
 
-
 class NetworkDataExtract():
     def __init__(self):
         try:

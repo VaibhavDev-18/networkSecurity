@@ -41,19 +41,10 @@ class NetworkDataExtract():
 
 
 if __name__ == "__main__":
-    FILE_PATH = "Network_Data\dataset_phishing.csv"
+    FILE_PATH = r"Network_Data\phisingData.csv"
     DATABASE = "NetworkDB"
     Collection = "NetworkData"
     networkobj = NetworkDataExtract()
     records = networkobj.csv_to_json_converter(file_path=FILE_PATH)
     no_of_records = networkobj.insert_data_mongodb(records, DATABASE, Collection)
     print(no_of_records)
-
-# ca = certifi.where()
-# client = MongoClient(uri)
-
-# try:
-#     client.admin.command('ping')
-#     print("Pinged your deployment. You successfully connected to MongoDB!")
-# except Exception as e:
-#     print(e)

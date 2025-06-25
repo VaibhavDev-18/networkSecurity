@@ -3,10 +3,10 @@ import sys
 import numpy as np 
 import pandas as pd
 
-TARGET_COLUMN = "status"
+TARGET_COLUMN = "Result"
 PIPELINE_NAME: str = "NetworkSecurity"
 ARTIFACT_DIR: str = "Artifacts"
-FILE_NAME: str = "dataset_phishing.csv"
+FILE_NAME: str = "phisingData.csv"
 
 TRAIN_FILE_NAME: str = "train.csv"
 TEST_FILE_NAME: str = "test.csv"
@@ -33,6 +33,6 @@ DATA_TRANSFORMATION_TRANSFORMED_OBJECT_DIR: str = "transformed_object"
 
 DATA_TRANSFORMATION_IMPUTER_PARAMS: dict = {
     "missing_values": np.nan,
-    "n_neightbors": 3,
+    "n_neighbors": 3,
     "weights": "uniform",
 }

@@ -92,7 +92,7 @@ class ModelTrainer:
 
         y_test_pred = best_model.predict(X_test)
         classification_test_metric = get_classification_score(y_true=y_test, y_pred=y_test_pred)
-        
+
         ##track the exp's with ml flow for test_metric
         self.track_mlflow(best_model, classification_test_metric)
         
@@ -103,6 +103,8 @@ class ModelTrainer:
 
         Network_Model = NetworkModel(preprocessor=preprocessor, model=best_model)
         save_object(self.model_trainer_config.trained_model_file_path, obj=NetworkModel)
+
+        save_object("final_model/model.pkl", best_model)
 
         ## model trainer artifact
         model_trainer_artifact = ModelTrainerArtifact(trained_model_file_path=self.model_trainer_config.trained_model_file_path, 
